@@ -31,8 +31,8 @@ auth_backend = AuthenticationBackend(
     get_strategy=get_jwt_strategy,
 )
 
-class UserManager(IntegerIDMixin, BaseUserManager[User, int]):
 
+class UserManager(IntegerIDMixin, BaseUserManager[User, int]):
 
     async def validate_password(
         self,
