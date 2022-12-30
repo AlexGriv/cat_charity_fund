@@ -33,6 +33,7 @@ auth_backend = AuthenticationBackend(
 
 class UserManager(IntegerIDMixin, BaseUserManager[User, int]):
 
+
     async def validate_password(
         self,
         password: str,
@@ -46,7 +47,6 @@ class UserManager(IntegerIDMixin, BaseUserManager[User, int]):
             raise InvalidPasswordException(
                 reason='Password should not contain e-mail'
             )
-
 
     async def on_after_register(
             self, user: User, request: Optional[Request] = None
